@@ -1,0 +1,242 @@
+@charset "UTF-8";
+/*!
+ * Start Bootstrap - Personal v1.0.1 (https://startbootstrap.com/template-overviews/personal)
+ * Copyright 2013-2023 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-personal/blob/master/LICENSE)
+ */
+/* Custom CSS Variables for Bootstrap colors */
+:root {
+  --bs-blue: #1e30f3;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #e21e80;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-black: #000;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-gray-100: #f8f9fa;
+  --bs-gray-200: #e9ecef;
+  --bs-gray-300: #dee2e6;
+  --bs-gray-400: #ced4da;
+  --bs-gray-500: #adb5bd;
+  --bs-gray-600: #6c757d;
+  --bs-gray-700: #495057;
+  --bs-gray-800: #343a40;
+  --bs-gray-900: #212529;
+  /* Custom Primary and Secondary colors as per Start Bootstrap Personal theme */
+  --bs-primary: #f3c11e; /* Amarillo */
+  --bs-secondary: #e21e80; /* Rosa/Fucsia */
+  /* Gradiente personalizado */
+  --bs-gradient-primary-to-secondary: linear-gradient(200deg, var(--bs-primary) 0%, var(--bs-secondary) 100%);
+}
+.text-custom-brand {
+    color: #d645458e !important; 
+}
+.text-custom-brand-2 {
+    color: #f1c01e !important; 
+}
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    color: var(--bs-body-color); /* Usar variable de color de Bootstrap */
+    background-color: var(--bs-body-bg); /* Usar variable de color de Bootstrap */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Ajustes para encabezados */
+h1.display-3 { /* Específico para el h1 en el header */
+  font-size: calc(1.525rem + 3.3vw);
+  font-weight: 700; /* Originalmente 300, pero el tema usa bolder */
+  line-height: 1.2;
+}
+@media (min-width: 992px) {
+  h1.display-3 {
+    font-size: 4rem; /* Tamaño fijo en pantallas grandes */
+  }
+}
+
+/* Gradiente de color para texto */
+.text-gradient {
+    background: -webkit-linear-gradient(315deg, var(--bs-primary) 0%, var(--bs-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Botones con colores del tema */
+.btn-primary {
+    --bs-btn-bg: var(--bs-primary);
+    --bs-btn-border-color: var(--bs-primary);
+    --bs-btn-hover-bg: #f15518; /* Tono más oscuro para hover */
+    --bs-btn-hover-border-color: #df2626;
+    --bs-btn-active-bg: #a10500;
+    --bs-btn-active-border-color: #fc2e2e;
+}
+
+.btn-outline-dark { /* Para el botón "Projects" */
+    --bs-btn-color: var(--bs-gray-dark);
+    --bs-btn-border-color: var(--bs-gray-dark);
+    --bs-btn-hover-color: #f3e39c;
+    --bs-btn-hover-bg: var(--bs-gray-dark);
+    --bs-btn-hover-border-color: var(--bs-gray-dark);
+}
+
+/* Estilo del perfil con gradiente y la imagen */
+.profile {
+    width: 25rem;
+    height: 25rem;
+    background: var(--bs-gradient-primary-to-secondary);
+    /* border-radius: 50%; ya no es necesaria si usas .rounded-circle en HTML */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    margin-top: 3rem;
+    max-height: 40rem;
+    max-width: 40rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Sombra suave, puedes ajustarla */
+
+    /* --- AÑADE ESTAS LÍNEAS PARA LA ANIMACIÓN DE PULSO/RESPLANDOR --- */
+    animation: pulse-glow 1s infinite cubic-bezier(0.66, 0, 0.34, 1);
+    /* Puedes agregar un 'delay' para que la animación no empiece inmediatamente: animation-delay: 1s; */
+    
+
+}
+.profile-img {
+    width: 100%; /* La imagen llenará el contenedor */
+    height: 100%; /* La imagen llenará el contenedor */
+    border-radius: 50%; /* Asegura que la imagen dentro del contenedor circular también sea circular */
+    object-fit: cover; /* Para asegurar que la imagen cubra el área sin distorsionarse */
+    padding: 1.5rem; /* Padding dentro del círculo con gradiente */
+    position: relative;
+    z-index: 2
+}
+
+/* SVG Dots (del tema original, si los vas a usar en el HTML) */
+.dots-1, .dots-2, .dots-3, .dots-4 {
+    position: absolute;
+    z-index: 0;
+}
+.dots-1 svg, .dots-2 svg, .dots-3 svg, .dots-4 svg {
+    width: 100%;
+    height: auto;
+    opacity: 0.2; /* Para que sean sutiles */
+}
+.dots-1 { top: -20%; left: -20%; }
+.dots-2 { top: 20%; right: -20%; }
+.dots-3 { bottom: -20%; left: -20%; }
+.dots-4 { bottom: 20%; right: -20%; }
+.dots-1 svg, .dots-3 svg { fill: var(--bs-white); } /* Ajuste de color para los puntos */
+.dots-2 svg, .dots-4 svg { fill: var(--bs-primary); }
+
+/* Feature icons (para las habilidades) */
+.feature {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    width: 4rem;
+    font-size: 2rem;
+    background: var(--bs-gradient-primary-to-secondary);
+    color: #fff;
+    border-radius: 0.5rem; /* rounded-3 de Bootstrap */
+}
+
+
+/* Ajustes responsivos para el perfil */
+@media (min-width: 576px) {
+  .profile { height: 60vw; width: 60vw; }
+  .profile-img { height: 65vw; }
+  .profile .dots-1, .profile .dots-2, .profile .dots-3, .profile .dots-4 { width: 3vw; }
+  .profile .dots-1 { right: 1.5vw; top: 4vw; }
+  .profile .dots-2 { right: -4vw; top: 6.05vw; }
+  .profile .dots-3 { left: 1.5vw; bottom: 6.05vw; }
+  .profile .dots-4 { left: -4vw; bottom: 4vw; }
+}
+@media (min-width: 768px) {
+  .profile { height: 50vw; width: 50vw; }
+  .profile-img { height: 55vw; }
+}
+@media (min-width: 992px) {
+  .profile { height: 40vw; width: 40vw; }
+  .profile-img { height: 45vw; }
+  .profile .dots-1, .profile .dots-2, .profile .dots-3, .profile .dots-4 { width: 1.5vw; }
+  .profile .dots-1 { right: 0.75vw; }
+  .profile .dots-2 { right: -2vw; }
+  .profile .dots-3 { left: 0.75vw; }
+  .profile .dots-4 { left: -2vw; }
+}
+@media (min-width: 1200px) {
+  .profile { height: 35vw; width: 35vw; }
+  .profile-img { height: 40vw; }
+}
+
+/* Otros estilos de texto del tema */
+.fw-bolder { font-weight: 800 !important; } /* El tema usa un bolder específico */
+.fw-light { font-weight: 300 !important; }
+.small { font-size: 0.875em !important; }
+
+/* Estilos de sección */
+.resume-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.resume-section .resume-section-content {
+    width: 100%;
+}
+@media (min-width: 992px) {
+    .resume-section {
+        padding-top: 7.5rem;
+        padding-bottom: 7.5rem;
+    }
+}
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    width: 4rem;
+    background-color: var(--bs-light); /* gris claro */
+    color: var(--bs-dark) !important;
+    border-radius: 50%;
+    font-size: 1.75rem;
+    margin-right: 1.5rem;
+    transition: all 0.15s ease-in-out;
+}
+.social-icon:hover {
+    background-color: var(--bs-primary);
+    color: #fff !important;
+}
+/* Keyframes para la animación de pulso/resplandor */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(var(--bs-primary-rgb), 0.7); /* Empieza con sombra transparente */
+    }
+    70% {
+        box-shadow: 0 0 0 1.5rem rgba(var(--bs-primary-rgb), 0); /* Crece y se desvanece */
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(var(--bs-primary-rgb), 0); /* Vuelve al inicio */
+    }
+}
+/* Keyframes para la animación de rotación */
+@keyframes rotate-subtle {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.img-fluid {
+    width: 300px;
+    height: 200px;
+}
